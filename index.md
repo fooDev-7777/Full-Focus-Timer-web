@@ -5,7 +5,7 @@ lang: en
 
 # Full Focus Timer — Legal Documents
 
-**Language:** English | [日本語版 (Japanese)](./ja/)
+**Language:** English | [日本語版 (Japanese)](./ja/) | [FAQ](./faq/)
 
 | Item | Details |
 | :--- | :--- |
@@ -23,7 +23,7 @@ lang: en
 - **[Part 1: Terms of Service](#terms-of-service)**
   - [Article 1. App Characteristics and Special Consent](#tos-article-1)
   - [Article 2. Prohibited Conduct](#tos-article-2)
-  - [Article 3. Premium Features and Nature of the License](#tos-article-3)
+  - [Article 3. Premium Features, Support Tips, and Nature of the License](#tos-article-3)
   - [Article 4. Disclaimers](#tos-article-4)
   - [Article 5. Limitation of Liability](#tos-article-5)
   - [Article 6. Third-Party Services and Advertising](#tos-article-6)
@@ -35,7 +35,7 @@ lang: en
   - [3. Android Auto Backup](#pp-auto-backup)
   - [4. Third-Party Services and External Data Transmission](#pp-third-party)
   - [5. Legal Bases for Processing (GDPR / UK GDPR)](#pp-legal-bases)
-  - [6. Consent Management and Ad Preferences (Opt-Out)](#pp-consent)
+  - [6. Consent Management, Ad Preferences, and Crash Reporting (Opt-Out)](#pp-consent)
   - [7. International Data Transfers](#pp-international-transfers)
   - [8. Data Retention](#pp-retention)
   - [9. Your Privacy Rights (GDPR / UK GDPR)](#pp-rights)
@@ -70,15 +70,17 @@ When using the App, you must not engage in any of the following activities:
 - Decompiling, disassembling, reverse engineering, or otherwise attempting to analyze the source code of the App, except to the extent expressly permitted by applicable mandatory law
 - Engaging in any other conduct that the Developer reasonably deems inappropriate
 
-## <a id="tos-article-3"></a>Article 3. Premium Features and Nature of the License
+## <a id="tos-article-3"></a>Article 3. Premium Features, Support Tips, and Nature of the License
 
-You may purchase paid premium features within the App. **These premium features do not guarantee perpetual operation; rather, they are provided as a license to use and extend the App's functionality under the Android OS environment available at the time of purchase.**
+You may purchase paid **Premium features** within the App through **Google Play Billing**. **Premium is provided as a one-time (Lifetime) purchase and is not an auto-renewing subscription.** **These Premium features do not guarantee perpetual operation; rather, they are provided as a license to use and extend the App's functionality under the Android OS environment available at the time of purchase.**
 
-**If you are a minor under the laws of your jurisdiction, you must obtain the consent of a parent or legal guardian before purchasing any paid features in the App.**
+You may also send optional **Support Tips** (consumable in-app purchases) to voluntarily support the Developer's ongoing work. **Support Tips are purely voluntary contributions and do not unlock any additional features, remove advertisements, or grant Premium benefits or other consideration.** Because Support Tips are consumable items, **they are generally non-refundable once purchased, except where required by applicable mandatory consumer protection laws or Google Play's refund policies.**
+
+**If you are a minor under the laws of your jurisdiction, you must obtain the consent of a parent or legal guardian before purchasing any paid features or Support Tips in the App.**
 
 You acknowledge in advance that the core functionality of the App relies heavily on specific Android OS system permissions (such as "Display over other apps"), and that **there is a technical risk that future OS specification changes, security updates, or platform policy changes may restrict or disable part or all of the App's features without prior notice.**
 
-Even if the Developer discontinues or modifies the App or its premium features for the reasons above or based on the Developer's reasonable judgment, **the Developer will not refund fees already paid, except where required by applicable mandatory law or Google Play's refund policies.**
+Even if the Developer discontinues or modifies the App or its Premium features for the reasons above or based on the Developer's reasonable judgment, **the Developer will not refund fees already paid, except where required by applicable mandatory law or Google Play's refund policies.**
 
 ## <a id="tos-article-4"></a>Article 4. Disclaimers
 
@@ -96,7 +98,7 @@ Even if a disclaimer in these Terms is found invalid under the Consumer Contract
 
 ## <a id="tos-article-6"></a>Article 6. Third-Party Services and Advertising
 
-The App integrates third-party services and advertising, including **Google AdMob**, **Google User Messaging Platform (UMP)**, and **Google Play In-App Review API** provided by Google LLC. Your use of such third-party services is subject to the terms and policies of the respective third parties. Except where required by applicable law, the Developer is not responsible for the specifications, content, or availability of such third-party services, nor for any damages arising therefrom.
+The App integrates third-party services and advertising provided by Google LLC, including **Google AdMob**, **Google User Messaging Platform (UMP)**, **Firebase Crashlytics**, **Google Play Billing Library**, **Google Play In-App Review API**, and **Google Play In-App Updates API**. Your use of such third-party services is subject to the terms and policies of the respective third parties. Except where required by applicable law, the Developer is not responsible for the specifications, content, or availability of such third-party services, nor for any damages arising therefrom.
 
 ## <a id="tos-article-7"></a>Article 7. Changes to These Terms
 
@@ -143,7 +145,7 @@ The following data is stored exclusively on your device using Android local stor
 
 ### (2) Data Transmitted Directly to Third-Party SDKs
 
-To support free operation of the App through advertising, manage advertising consent, and provide in-app review prompts, third-party SDKs integrated into the App transmit certain technical and usage data directly from your device to **Google LLC**. See [Section 4](#pp-third-party) for full details.
+To support free operation of the App through advertising, manage consent, diagnose app crashes (only when consent is granted), process and restore in-app purchases, display in-app review prompts, and check for app updates, third-party SDKs integrated into the App transmit certain technical and usage data directly from your device to **Google LLC**. See [Section 4](#pp-third-party) for full details.
 
 ## <a id="pp-auto-backup"></a>3. Android Auto Backup
 
@@ -161,9 +163,13 @@ The App uses the following third-party services provided by **Google LLC**:
 | Third-Party Service | Provider | Data Categories Transmitted | Purpose of Processing | Provider Privacy Information |
 | :--- | :--- | :--- | :--- | :--- |
 | **Google AdMob** & **Google User Messaging Platform (UMP)** | Google LLC | Device/advertising identifiers (e.g., Android Advertising ID), IP address (approximate location), device information (OS version, model, language), diagnostics and crash logs, app interaction data (e.g., ad impressions and taps), and consent status | Delivering personalized or non-personalized ads (based on your consent and region), measuring ad performance, preventing fraud, managing and recording GDPR/UMP consent choices, and monetizing the App | [Google Privacy Policy](https://policies.google.com/privacy)<br>[How Google uses information from apps](https://policies.google.com/technologies/partner-sites)<br>[Google Ad Technology Providers](https://support.google.com/admob/answer/9012903) |
+| **Firebase Crashlytics** | Google LLC | Crash logs, stack traces, device model, OS version, app version, and anonymous Firebase Installation ID (Crashlytics UUID) | Diagnosing crashes, identifying root causes, and improving App stability and reliability (**disabled by default at app launch; enabled only when UMP consent state `canRequestAds` permits collection**) | [Privacy and Security in Firebase](https://firebase.google.com/support/privacy)<br>[Google Privacy Policy](https://policies.google.com/privacy) |
+| **Google Play Billing Library** | Google LLC | App identifier, product/SKU identifiers, purchase tokens, order/transaction status, and Google Play billing verification signals handled by Google Play | Processing one-time Premium purchases and optional Support Tips, verifying purchase entitlement, and restoring purchases across reinstalls or devices | [Google Privacy Policy](https://policies.google.com/privacy)<br>[Google Play Terms of Service](https://play.google.com/about/play-terms/) |
 | **Google Play In-App Review API** | Google LLC | App identifier and device / Google Play account eligibility signals handled by Google Play Services | Displaying the native Google Play Store review dialog within the App and managing prompt frequency | [Google Privacy Policy](https://policies.google.com/privacy)<br>[Google Play Terms of Service](https://play.google.com/about/play-terms/) |
+| **Google Play In-App Updates API** | Google LLC | App package identifier, installed app version code, and device / Google Play update availability signals handled by Google Play Services | Checking whether a newer version of the App is available on Google Play and guiding users to update within the App | [Google Privacy Policy](https://policies.google.com/privacy)<br>[Google Play Terms of Service](https://play.google.com/about/play-terms/) |
 
-The Developer does not receive or access your Google account details through the Google Play In-App Review API.
+- **Consent-Gated Crash Reporting (Firebase Crashlytics):** Firebase Crashlytics data collection is **disabled by default when the App launches** and is activated **only** in linkage with your Google UMP consent state (`canRequestAds`). If you withdraw consent via **Settings → Privacy Settings**, crash report collection stops accordingly.
+- **No Access to Payment Credentials or Google Account Details:** All payment processing for Premium and Support Tips is handled exclusively by **Google Play**. **The Developer never receives, accesses, or stores your credit card number, bank account details, billing address, or other payment credentials**, nor does the Developer access your Google account details through Google Play Billing, In-App Review, or In-App Updates.
 
 ## <a id="pp-legal-bases"></a>5. Legal Bases for Processing (GDPR / UK GDPR)
 
@@ -175,19 +181,24 @@ If you are located in the **European Economic Area (EEA)** or the **United Kingd
 | **Personalized Advertising & Device Access for Ads** (Google AdMob) | **Consent** (Art. 6(1)(a)) | Collected explicitly via Google UMP before requesting personalized ads in the EEA, UK, and Switzerland. |
 | **Advertising Consent Management & Compliance** (Google UMP) | **Legal obligation** (Art. 6(1)(c)) and **Consent** (Art. 6(1)(a)) | Necessary to obtain, store, and demonstrate your consent preferences in compliance with GDPR Art. 7 and ePrivacy rules. |
 | **Non-Personalized Ads, Fraud Prevention & Technical Ad Delivery** (Google AdMob) | **Consent** (Art. 6(1)(a)) and/or **Legitimate interests** (Art. 6(1)(f)) | As presented in the UMP consent form, to prevent ad fraud, ensure technical delivery, and support free availability of the App, where not overridden by your rights. |
+| **Crash Reporting & Stability Diagnostics** (Firebase Crashlytics) | **Consent** (Art. 6(1)(a)) | Disabled by default at launch; enabled only when UMP consent (`canRequestAds`) is granted, and stopped upon consent withdrawal in Privacy Settings. |
+| **In-App Purchase Processing, Verification & Restoration** (Google Play Billing Library) | **Performance of a contract** (Art. 6(1)(b)) and **Legal obligation** (Art. 6(1)(c)) | Necessary to fulfill your one-time Premium purchase or optional Support Tip, verify entitlement, restore purchases, and satisfy statutory transaction obligations. Payment credentials are handled exclusively by Google Play. |
 | **In-App Review Prompts** (Google Play In-App Review API) | **Legitimate interests** (Art. 6(1)(f)) | To offer an optional, non-intrusive way for users to leave feedback on Google Play to improve the App. |
+| **In-App Update Checks & Prompts** (Google Play In-App Updates API) | **Legitimate interests** (Art. 6(1)(f)) | To inform users of bug fixes, security patches, and newer versions of the App so the App remains safe and reliable. |
 | **Responding to User Support / Privacy Inquiries** (via email) | **Performance of a contract** (Art. 6(1)(b)) / **Legitimate interests** (Art. 6(1)(f)) / **Legal obligation** (Art. 6(1)(c)) | Necessary to answer your questions, provide support, or fulfill statutory data subject rights requests. |
 
-**Voluntary Nature of Data Provision (GDPR Art. 13(2)(e)):** Providing consent for personalized advertising is strictly voluntary and is **not** a statutory or contractual requirement to use the App's core timer features. Storing presets, session logs, and reminders locally is optional and controlled directly by your use of those features.
+**Voluntary Nature of Data Provision (GDPR Art. 13(2)(e)):** Providing consent for personalized advertising or crash reporting (via Google UMP), as well as purchasing Premium or optional Support Tips, is strictly voluntary and is **not** a statutory or contractual requirement to use the App's core timer features. Storing presets, session logs, and reminders locally is optional and controlled directly by your use of those features.
 
-## <a id="pp-consent"></a>6. Consent Management and Ad Preferences (Opt-Out)
+## <a id="pp-consent"></a>6. Consent Management, Ad Preferences, and Crash Reporting (Opt-Out)
 
-For users in the EEA, UK, and Switzerland, the App uses **Google User Messaging Platform (UMP)** to obtain and manage your advertising consent preferences before displaying ads.
+For users in the EEA, UK, and Switzerland, the App uses **Google User Messaging Platform (UMP)** to obtain and manage your consent preferences before displaying ads or enabling crash reporting.
+
+- **Firebase Crashlytics Linkage:** Crash report collection via Firebase Crashlytics is **disabled by default at app launch** and is activated **only** when your UMP consent status (`canRequestAds`) permits it. Withdrawing consent stops crash report collection as well.
 
 You can **review, change, or withdraw your consent at any time** using either of the following methods:
 
 1. **In-App Privacy Settings:**
-   Open the App → go to **Settings** → tap **"Privacy Settings"** to reopen the consent form and update or withdraw your advertising consent at any time (available in regions where consent management is required, such as the EEA, UK, and Switzerland).
+   Open the App → go to **Settings** → tap **"Privacy Settings"** to reopen the consent form and update or withdraw your consent at any time (available in regions where consent management is required, such as the EEA, UK, and Switzerland). Withdrawing consent updates your advertising preferences and stops Firebase Crashlytics collection.
 2. **Android Device Settings:**
    On your Android device, go to **Settings > Google > Ads** and select **"Delete advertising ID"** or **"Opt out of Ads Personalization"** (exact menu labels may vary depending on your Android OS version and device manufacturer).
 
@@ -198,13 +209,13 @@ In accordance with **GDPR Article 7(3)**, withdrawing your consent does not affe
 ## <a id="pp-international-transfers"></a>7. International Data Transfers
 
 - **Developer Location:** The Developer (`fooDev`) is based in **Japan**. Japan has been recognized by the European Commission (under **GDPR Article 45**) and the UK Government as providing an adequate level of personal data protection. As stated above, locally stored App data is not transferred to the Developer's servers.
-- **Third-Party Transfers (Google LLC):** When third-party SDKs (such as Google AdMob, Google UMP, and Google Play Services) transmit technical or advertising data directly from your device to **Google LLC**, that data may be transferred to and processed in the **United States** and other countries outside the EEA and the UK.
-- **Transfer Safeguards:** Google LLC relies on approved transfer mechanisms under **GDPR Chapter V**, including the **EU-U.S. Data Privacy Framework (DPF)**, the **UK Extension to the EU-U.S. DPF**, the **Swiss-U.S. DPF**, the **European Commission's Standard Contractual Clauses (SCCs)**, and the **UK International Data Transfer Addendum (IDTA)**, as applicable. For more information, please visit [Google's Privacy Frameworks](https://policies.google.com/privacy/frameworks).
+- **Third-Party Transfers (Google LLC):** When third-party SDKs (Google AdMob, Google UMP, Firebase Crashlytics, Google Play Billing Library, Google Play In-App Review API, and Google Play In-App Updates API) transmit technical, crash diagnostic, billing verification, or advertising data directly from your device to **Google LLC**, that data may be transferred to and processed in the **United States** and other countries outside the EEA and the UK.
+- **Transfer Safeguards:** Google LLC relies on approved transfer mechanisms under **GDPR Chapter V**, including the **EU-U.S. Data Privacy Framework (DPF)**, the **UK Extension to the EU-U.S. DPF**, the **Swiss-U.S. DPF**, the **European Commission's Standard Contractual Clauses (SCCs)**, and the **UK International Data Transfer Addendum (IDTA)**, as applicable. For more information, please visit [Google's Privacy Frameworks](https://policies.google.com/privacy/frameworks) and [Privacy and Security in Firebase](https://firebase.google.com/support/privacy).
 
 ## <a id="pp-retention"></a>8. Data Retention
 
 - **Locally Stored App Data:** Retained on your device only for as long as you keep the App installed or until you delete individual items within the App or clear App storage via Android settings. If Android Auto Backup is enabled, encrypted backups are retained in your Google account according to Google's backup retention policies until you delete them.
-- **Third-Party SDK Data (Google AdMob / UMP / Google Play):** Retained by Google LLC in accordance with [Google's Privacy Policy](https://policies.google.com/privacy) and data retention schedules.
+- **Third-Party SDK Data (Google AdMob / UMP / Firebase Crashlytics / Google Play):** Retained by Google LLC in accordance with [Google's Privacy Policy](https://policies.google.com/privacy), [Privacy and Security in Firebase](https://firebase.google.com/support/privacy), and Google's data retention schedules.
 - **Email Inquiries:** If you contact us by email, we retain your email address and message contents only for as long as necessary to resolve your inquiry and comply with applicable legal obligations, after which they are securely deleted.
 
 ## <a id="pp-rights"></a>9. Your Privacy Rights (GDPR / UK GDPR)
@@ -224,7 +235,7 @@ If you are located in the EEA, the UK, or another jurisdiction granting similar 
 ### How to Exercise Your Rights
 
 - **For Locally Stored Data:** You have immediate, direct control on your device — you can edit or delete presets and settings within the App, clear App data in Android settings, or uninstall the App.
-- **For Advertising / Google SDK Data:** Use **Settings → Privacy Settings** inside the App (available in regions where consent management is required), your Android Ads settings, or [Google My Ad Center](https://myadcenter.google.com/) (see also [Google's Privacy Policy](https://policies.google.com/privacy)).
+- **For Advertising, Crash Reporting & Google SDK Data:** Use **Settings → Privacy Settings** inside the App (available in regions where consent management is required), your Android Ads settings, or [Google My Ad Center](https://myadcenter.google.com/) (see also [Google's Privacy Policy](https://policies.google.com/privacy) and [Privacy and Security in Firebase](https://firebase.google.com/support/privacy)).
 - **For Direct Requests to the Developer (e.g., email correspondence):** Email us at [fullfocustimerdev@gmail.com](mailto:fullfocustimerdev@gmail.com). We will respond without undue delay and within **one month** of receiving your request in accordance with **GDPR Article 12(3)** (extendable by up to two further months for complex or numerous requests, with notice).
 
 ## <a id="pp-children"></a>10. Children's Privacy
