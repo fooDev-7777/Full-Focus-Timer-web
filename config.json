@@ -1,0 +1,25 @@
+{
+  "terms_version": 2,
+  "announcement": {
+    "id": "",
+    "enabled": false,
+    "severity": "info",
+    "title": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": "",
+      "es": "",
+      "it": ""
+    },
+    "message": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": "",
+      "es": "",
+      "it": ""
+    },
+    "action_url": ""
+  }
+}
